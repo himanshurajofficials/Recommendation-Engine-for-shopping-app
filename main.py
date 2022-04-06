@@ -11,9 +11,9 @@ app = Flask(__name__)
 # model = pickle.load(open('model.pkl', 'rb'))
 
 
-@app.route('/')
-def home():
-    return "hello world"
+# @app.route('/')
+# def home():
+#     return "hello world"
 
 
 def predict1(list2):
