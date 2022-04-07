@@ -30,6 +30,8 @@ def predict():
             print(type(m1))
             list3.append(m1)
             m = ""
+        elif list1[i] == " " and  list1[i - 1] == ",":
+            continue
         else:
             m = m + list1[i]
 
