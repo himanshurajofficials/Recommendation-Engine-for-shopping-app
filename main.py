@@ -1,14 +1,8 @@
-# import numpy as np
+
 from flask import Flask, request, jsonify
-# import pickle
-import pandas as pd
-import numpy as np
+
 
 app = Flask(__name__)
-
-
-# Load the model
-# model = pickle.load(open('model.pkl', 'rb'))
 
 
 @app.route('/')
@@ -35,19 +29,11 @@ def predict():
         else:
             m = m + list1[i]
 
-            # print(m)
-
-    # list1=["sports","electronic","food"]
-    # Make prediction using model loaded from disk as per the data.
-    # input_query = np.array(list1)
     result1 = predict1(list3)
     print(list3)
     # print(list3)
     print(result1)
 
-    # result = model.predict(input_query)
-    # Take the first value of prediction
-    #  result1 = result
     return jsonify({'values': result1})
 
 
@@ -187,34 +173,10 @@ def predict1(list2):
     m = np.array(list1, dtype=list)
     output11 = m.flatten().tolist()
     print(output11)
-    # print(output11.size)
 
-    # data = {"product name": ["bat", "ball", "iphone", "charger", "snacks"],
-    #         "product price": [12, 15, 99945, np.NaN, 80],
-    #         "tags": ["sports", "sports", "sports", "electronic", "food"], "rating": [4500, 4000, 600, 70, 5000]}
-    # from firebase import firebase  # firebase data retrieving code #live
-    # firebase = firebase.FirebaseApplication('https://online-shop-app-cba77-default-rtdb.firebaseio.com/', None)
-    # result = firebase.get('/products', None)
-    # result  # type(result)=dict, JSON formate
-
-    # df = pd.DataFrame(data)
-    # print(df)
-    # # print("list2: " + list2)
-    # df.set_index('product name', inplace=True)
-    #
-    # list1 = []
-    # list2=["sports","electronic","food"]
     for i in range(0, len(list2)):
         print(len(list2))
-    # for tgs in list2:
-    #     df23 = df[df['tags'] == tgs]
-    #     print(tgs)
-    #     df24 = df23.sort_values(by=['rating'], ascending=False)
-    #     df25 = df24[:2]
-    #     df26 = df25.head()
-    #     list1 += list(df26.index.values)
-    # print(list1)
-    # return list1
+
     return output11
 
 
